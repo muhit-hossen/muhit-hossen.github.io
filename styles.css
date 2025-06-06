@@ -32,13 +32,16 @@ body {
 }
 
 /* --- টাইপিং অ্যানিমেশন --- */
+
 .typing {
-  width: 25ch; /* লেখার দৈর্ঘ্য অনুযায়ী চ্যান সংখ্যা ঠিক করুন */
+  /* পরিবর্তন: লেখার দৈর্ঘ্য অনুযায়ী 25ch কে 32ch করা হয়েছে */
+  width: 32ch; 
   white-space: nowrap;
   overflow: hidden;
   border-right: 3px solid #34d399; /* টাইপিং কার্সর */
   font-family: 'Inter', sans-serif;
   font-size: 1.2rem;
+  /* পরিবর্তন: অ্যানিমেশনের ধাপও লেখার দৈর্ঘ্যের সাথে মিলিয়ে দিন */
   animation: typing 2s steps(32) forwards, blinkCaret 0.75s step-end infinite;
 }
 
@@ -47,7 +50,8 @@ body {
     width: 0;
   }
   to {
-    width: 25ch;
+    /* পরিবর্তন: এটিও 32ch হবে */
+    width: 32ch;
   }
 }
 
