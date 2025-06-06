@@ -1,65 +1,58 @@
-// Mobile Navigation Menu Logic
+// একটি DOMContentLoaded এর মধ্যে সমস্ত কোড রাখা হয়েছে
 document.addEventListener('DOMContentLoaded', function() {
-    const menuButton = document.querySelector('.ri-menu-line').parentElement;
-    const nav = document.querySelector('nav');
     
-    menuButton.addEventListener('click', function() {
-        if (nav.classList.contains('hidden')) {
-            nav.classList.remove('hidden');
-            nav.classList.add('flex', 'flex-col', 'absolute', 'top-16', 'right-4', 'bg-white', 'shadow-lg', 'p-4', 'rounded-lg', 'space-y-4');
-        } else {
-            nav.classList.add('hidden');
-            nav.classList.remove('flex', 'flex-col', 'absolute', 'top-16', 'right-4', 'bg-white', 'shadow-lg', 'p-4', 'rounded-lg', 'space-y-4');
-        }
-    });
+    // --- মোবাইল নেভিগেশন মেন্যু লজিক ---
+    const menuButton = document.getElementById('menu-toggle');
+    const navMenu = document.getElementById('main-nav');
 
-    // Close mobile menu when clicking elsewhere
-    document.addEventListener('click', function(event) {
-        if (!nav.contains(event.target) && !menuButton.contains(event.target) && !nav.classList.contains('hidden') && window.innerWidth < 768) {
-            nav.classList.add('hidden');
-            nav.classList.remove('flex', 'flex-col', 'absolute', 'top-16', 'right-4', 'bg-white', 'shadow-lg', 'p-4', 'rounded-lg', 'space-y-4');
-        }
-    });
+    if (menuButton && navMenu) {
+        menuButton.addEventListener('click', function(e) {
+            e.stopPropagation(); // বাটন ক্লিকে ডকুমেন্ট ক্লিক যেন ট্রিগার না হয়
+            navMenu.classList.toggle('mobile-menu-open');
+        });
 
-    // Handle window resize
-    window.addEventListener('resize', function() {
-        if (window.innerWidth >= 768) {
-            nav.classList.remove('hidden', 'flex-col', 'absolute', 'top-16', 'right-4', 'bg-white', 'shadow-lg', 'p-4', 'rounded-lg', 'space-y-4');
-            nav.classList.add('flex');
-        } else if (!menuButton.classList.contains('active')) {
-            nav.classList.add('hidden');
-            nav.classList.remove('flex');
-        }
-    });
-});
+        // মেন্যুর বাইরে ক্লিক করলে মেন্যু বন্ধ হয়ে যাবে
+        document.addEventListener('click', function(e) {
+            if (!navMenu.contains(e.target) && navMenu.classList.contains('mobile-menu-open')) {
+                navMenu.classList.remove('mobile-menu-open');
+            }
+        });
+    }
 
-// Smooth Scrolling Logic
-document.addEventListener('DOMContentLoaded', function() {
+    // --- স্মুথ স্ক্রলিং লজিক ---
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
             const targetId = this.getAttribute('href');
-            
-            // Special case for 'home' to scroll to the top
-            if (targetId === '#home') {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-                return;
-            }
-
             const targetElement = document.querySelector(targetId);
+
             if (targetElement) {
+                // স্টিকি হেডারের জন্য অফসেট (হেডারের উচ্চতা প্রায় 70-80px)
+                const headerOffset = 80; 
+                const elementPosition = targetElement.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
                 window.scrollTo({
-                    top: targetElement.offsetTop - 80, // Offset for the sticky header
+                    top: offsetPosition,
                     behavior: 'smooth'
                 });
 
-                // Close mobile menu if open after clicking a link
-                const nav = document.querySelector('nav');
-                if (window.innerWidth < 768 && !nav.classList.contains('hidden')) {
-                    nav.classList.add('hidden');
-                    nav.classList.remove('flex', 'flex-col', 'absolute', 'top-16', 'right-4', 'bg-white', 'shadow-lg', 'p-4', 'rounded-lg', 'space-y-4');
+                // মোবাইল মেন্যু খোলা থাকলে লিঙ্ক ক্লিকে বন্ধ হয়ে যাবে
+                if (navMenu && navMenu.classList.contains('mobile-menu-open')) {
+                    navMenu.classList.remove('mobile-menu-open');
                 }
             }
         });
     });
+
+    // --- রিসাইজ হ্যান্ডলিং ---
+    // যখন স্ক্রিন বড় হবে, তখন মোবাইল মেন্যুর ক্লাস स्वतः সরে যাবে 
+    window.addEventListener('resize', function() {
+        if (window.innerWidth >= 768) {
+            if (navMenu && navMenu.classList.contains('mobile-menu-open')) {
+                navMenu.classList.remove('mobile-menu-open');
+            }
+        }
+    });
+
 });
