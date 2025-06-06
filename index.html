@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Muhit Hossen Sabbir - Cybersecurity Portfolio</title>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com/3.4.1"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#2980b9',secondary:'#3498db'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<!-- External Fonts and Icons -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
+
+<!-- === CSS ফাইল লিঙ্ক করা হয়েছে === -->
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-900">
+<!-- Header/Navigation -->
+<header class="bg-gray-800 shadow-sm sticky top-0 z-50">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+        <div class="flex items-center">
+            <div class="text-xl font-semibold text-white">Muhit<span class="text-emerald-400"> Hossen</span></div>
+        </div>
+        <nav class="hidden md:flex space-x-8">
+            <a href="#about" class="nav-link text-gray-300 hover:text-emerald-400 transition-colors">About</a>
+            <a href="#skills" class="nav-link text-gray-300 hover:text-emerald-400 transition-colors">Skills</a>
+            <a href="#certifications" class="nav-link text-gray-300 hover:text-emerald-400 transition-colors">Certifications</a>
+            <a href="#contact" class="nav-link text-gray-300 hover:text-emerald-400 transition-colors">Contact</a>
+        </nav>
+        <button class="md:hidden flex items-center justify-center w-10 h-10 text-gray-300">
+            <i class="ri-menu-line ri-lg"></i>
+        </button>
+    </div>
+</header>
+
+<!-- START: MODIFIED HERO SECTION -->
+<section id="home" class="relative flex w-full h-screen overflow-hidden">
+    <!-- Left Section (Dark) -->
+    <div class="w-3/5 bg-gray-900 text-white flex flex-col justify-center p-8 md:p-24">
+        <div class="max-w-xl">
+            <p class="text-lg text-emerald-400 font-medium">Assalamu Alaikum Everyone, I am</p>
+            <h1 class="text-5xl md:text-6xl font-black uppercase my-4 leading-tight">Muhit Hossen<br>Sabbir</h1>
+            <p class="text-lg text-gray-300 mb-8">Aspiring Cybersecurity Enthusiast | Ethical Hacking & Penetration Testing | Bug Bounty Explorer</p>
+            <a href="#contact" class="inline-block bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-3 px-8 rounded-lg shadow-lg transition-all">
+                Get In Touch →
+            </a>
+        </div>
+    </div>
+
+    <!-- Right Section (Green) -->
+    <div class="w-2/5 bg-emerald-500">
+        <!-- This part is intentionally empty to act as the background -->
+    </div>
+
+    <!-- Overlapping Person Image -->
+    <div class="absolute bottom-0 left-[60%] transform -translate-x-1/2 h-4/5 w-auto">
+        <img src="muhit.png" alt="Portrait of Muhit Hossen Sabbir" class="h-full w-auto object-cover">
+    </div>
+</section>
+<!-- END: MODIFIED HERO SECTION -->
+
+
+<!-- About Section -->
+<section id="about" class="py-16 bg-gray-800">
+<div class="container mx-auto px-4">
+<div class="max-w-3xl mx-auto">
+<h2 class="text-3xl font-bold text-white mb-8 text-center">About Me</h2>
+<div class="bg-gray-700 p-8 rounded-lg shadow-md">
+<p class="text-gray-200 leading-relaxed mb-6">
+I am a passionate cybersecurity enthusiast dedicated to ethical hacking and penetration testing. My journey into the world of digital security started with a deep curiosity about how systems can be protected from malicious attacks. Currently, I am sharpening my expertise in vulnerability assessment, network security, and web application penetration testing, while actively participating in bug bounty programs to gain real-world experience.
+</p>
+<p class="text-gray-200 leading-relaxed">
+With a solid foundation in programming and networking fundamentals, I continuously explore the latest techniques and tools to effectively identify and mitigate security threats. I strongly believe in responsible disclosure and maintaining the highest ethical standards in cybersecurity. My goal is to contribute meaningfully towards building safer digital environments for all users.
+</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Skills Section -->
+<section id="skills" class="py-16 bg-gray-900">
+<div class="container mx-auto px-4">
+<div class="max-w-3xl mx-auto">
+<h2 class="text-3xl font-bold text-white mb-8 text-center">Technical Skills</h2>
+<div class="mb-8">
+<h3 class="text-xl font-semibold text-emerald-400 mb-4">Security</h3>
+<div class="flex flex-wrap gap-3">
+<span class="skill-tag bg-blue-100 text-primary px-4 py-2 rounded-full font-medium transition-all duration-300">Penetration Testing</span>
+<span class="skill-tag bg-blue-100 text-primary px-4 py-2 rounded-full font-medium transition-all duration-300">Vulnerability Assessment</span>
+<span class="skill-tag bg-blue-100 text-primary px-4 py-2 rounded-full font-medium transition-all duration-300">Network Security</span>
+<span class="skill-tag bg-blue-100 text-primary px-4 py-2 rounded-full font-medium transition-all duration-300">Web Security</span>
+<span class="skill-tag bg-blue-100 text-primary px-4 py-2 rounded-full font-medium transition-all duration-300">OWASP Top 10</span>
+</div>
+</div>
+<div class="mb-8">
+<h3 class="text-xl font-semibold text-emerald-400 mb-4">Programming & Tools</h3>
+<div class="flex flex-wrap gap-3">
+<span class="skill-tag bg-green-100 text-green-700 px-4 py-2 rounded-full font-medium transition-all duration-300">Python</span>
+<span class="skill-tag bg-green-100 text-green-700 px-4 py-2 rounded-full font-medium transition-all duration-300">Bash Scripting</span>
+<span class="skill-tag bg-green-100 text-green-700 px-4 py-2 rounded-full font-medium transition-all duration-300">SQL</span>
+<span class="skill-tag bg-green-100 text-green-700 px-4 py-2 rounded-full font-medium transition-all duration-300">Burp Suite</span>
+<span class="skill-tag bg-green-100 text-green-700 px-4 py-2 rounded-full font-medium transition-all duration-300">Metasploit</span>
+<span class="skill-tag bg-green-100 text-green-700 px-4 py-2 rounded-full font-medium transition-all duration-300">Wireshark</span>
+<span class="skill-tag bg-green-100 text-green-700 px-4 py-2 rounded-full font-medium transition-all duration-300">Nmap</span>
+</div>
+</div>
+<div class="mb-8">
+<h3 class="text-xl font-semibold text-emerald-400 mb-4">Systems & Platforms</h3>
+<div class="flex flex-wrap gap-3">
+<span class="skill-tag bg-purple-100 text-purple-700 px-4 py-2 rounded-full font-medium transition-all duration-300">Linux</span>
+<span class="skill-tag bg-purple-100 text-purple-700 px-4 py-2 rounded-full font-medium transition-all duration-300">Windows</span>
+<span class="skill-tag bg-purple-100 text-purple-700 px-4 py-2 rounded-full font-medium transition-all duration-300">Kali Linux</span>
+<span class="skill-tag bg-purple-100 text-purple-700 px-4 py-2 rounded-full font-medium transition-all duration-300">AWS</span>
+<span class="skill-tag bg-purple-100 text-purple-700 px-4 py-2 rounded-full font-medium transition-all duration-300">Docker</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Certifications Section -->
+<section id="certifications" class="py-16 bg-gray-800">
+<div class="container mx-auto px-4">
+<div class="max-w-4xl mx-auto">
+<h2 class="text-3xl font-bold text-white mb-8 text-center">Certifications</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="cert-card bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-lg transition-all duration-300">
+<div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+<i class="ri-shield-check-line ri-lg text-primary"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-800 mb-2">Web Pentesting Essential</h3>
+<p class="text-gray-600 mb-4">Comprehensive training in web application security testing methodologies and best practices.</p>
+<div class="text-sm text-gray-500">Completed June 2023</div>
+</div>
+<div class="cert-card bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-lg transition-all duration-300">
+<div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+<i class="ri-lock-line ri-lg text-primary"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-800 mb-2">Cybersecurity for Professionals</h3>
+<p class="text-gray-600 mb-4">Advanced training in threat detection, incident response, and security architecture.</p>
+<div class="text-sm text-gray-500">Completed June 2024</div>
+</div>
+<div class="cert-card bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-lg transition-all duration-300">
+<div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+<i class="ri-code-box-line ri-lg text-primary"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-800 mb-2">Ethical Hacking for Professionals</h3>
+<p class="text-gray-600 mb-4">Hands-on training in ethical hacking techniques, vulnerability assessment, and penetration testing.</p>
+<div class="text-sm text-gray-500">Completed February 2024</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section id="contact" class="py-16 bg-gray-900">
+<div class="container mx-auto px-4">
+<div class="max-w-3xl mx-auto">
+<h2 class="text-3xl font-bold text-white mb-8 text-center">Get In Touch</h2>
+<div class="bg-gray-800 rounded-lg shadow-md p-8">
+<div class="flex flex-col md:flex-row md:items-center justify-between mb-8">
+<div class="mb-6 md:mb-0">
+<h3 class="text-xl font-semibold text-gray-200 mb-2">Contact Information</h3>
+<p class="text-gray-200">Feel free to reach out for collaborations or just a chat!</p>
+</div>
+<a href="mailto:muhit.hossen63@gmail.com" class="bg-primary hover:bg-primary/90 text-white font-medium py-3 px-6 !rounded-button shadow transition-all whitespace-nowrap">
+<span class="flex items-center">
+<i class="ri-mail-line mr-2"></i> Send Email
+</span>
+</a>
+</div>
+<div class="flex flex-col sm:flex-row justify-center gap-6">
+<a href="https://github.com/muhit-hossen" target="_blank" class="social-icon flex items-center justify-center gap-3 bg-gray-100 hover:bg-gray-200 px-6 py-4 rounded-lg transition-all">
+<div class="w-10 h-10 flex items-center justify-center">
+<i class="ri-github-fill ri-lg text-gray-800"></i>
+</div>
+<span class="font-medium text-gray-800">GitHub</span>
+</a>
+<a href="https://linkedin.com/in/muhit-hossen-sabbir" class="social-icon flex items-center justify-center gap-3 bg-gray-100 hover:bg-gray-200 px-6 py-4 rounded-lg transition-all">
+<div class="w-10 h-10 flex items-center justify-center">
+<i class="ri-linkedin-box-fill ri-lg text-blue-700"></i>
+</div>
+<span class="font-medium text-gray-800">LinkedIn</span>
+</a>
+<a href="https://t.me/Muhit_Hossain" target="_blank" class="social-icon flex items-center justify-center gap-3 bg-gray-100 hover:bg-gray-200 px-6 py-4 rounded-lg transition-all">
+<div class="w-10 h-10 flex items-center justify-center">
+<i class="ri-telegram-fill ri-lg text-blue-400"></i>
+</div>
+<span class="font-medium text-gray-800">Telegram</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-gray-800 text-white py-8">
+<div class="container mx-auto px-4 text-center">
+<p class="mb-4">© 2025 Muhit Hossen Sabbir. All rights reserved.</p>
+<p class="text-gray-400 text-sm">Cybersecurity enthusiast passionate about ethical hacking and digital security.</p>
+</div>
+</footer>
+
+<!-- === JavaScript ফাইল লিঙ্ক করা হয়েছে === -->
+<script src="scripts.js"></script>
+</body>
+</html>
