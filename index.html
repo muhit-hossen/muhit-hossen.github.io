@@ -58,10 +58,14 @@
     </div>
 </header>
 
+      
 <!-- START: MODIFIED HERO SECTION -->
-<section id="home" class="relative flex w-full h-screen overflow-hidden">
+<!-- পরিবর্তন: h-screen এর বদলে min-h-screen ব্যবহার করা হয়েছে যাতে কন্টেন্ট বেশি হলে সমস্যা না হয় -->
+<section id="home" class="relative flex flex-col md:flex-row w-full min-h-screen overflow-hidden">
+    
     <!-- Left Section (Dark) -->
-    <div class="w-3/5 bg-gray-900 text-white flex flex-col justify-center p-8 md:p-24">
+    <!-- পরিবর্তন: মোবাইলের জন্য w-full এবং ডেস্কটপের জন্য md:w-3/5 করা হয়েছে -->
+    <div class="w-full md:w-3/5 bg-gray-900 text-white flex flex-col justify-center p-8 md:p-24">
         <div class="max-w-xl">
             <p class="text-lg text-emerald-400 font-medium typing">Assalamu Alaikum Everyone, I am</p>
             <h1 class="text-5xl md:text-6xl font-black uppercase my-4 leading-tight">Muhit Hossen<br>Sabbir</h1>
@@ -73,16 +77,17 @@
     </div>
 
     <!-- Right Section (Green) -->
-    <div class="w-2/5 bg-emerald-500">
+    <!-- পরিবর্তন: মোবাইলে hidden এবং ডেস্কটপে md:block ও md:w-2/5 করা হয়েছে -->
+    <div class="hidden md:block md:w-2/5 bg-emerald-500">
         <!-- This part is intentionally empty to act as the background -->
     </div>
 
     <!-- Overlapping Person Image -->
+    <!-- এখানে কোনো পরিবর্তনের প্রয়োজন নেই কারণ এটি md:block দিয়ে ডেস্কটপে দৃশ্যমান -->
     <div class="absolute bottom-0 left-[60%] transform -translate-x-1/2 h-full w-auto">
-        <img src="muhit-pf.png" alt="Portrait of Muhit Hossen" class="hidden md:block relative w-full h-screen object-cover overflow-hidden">
+        <img src="muhit.png" alt="Portrait of Muhit Hossen" class="hidden md:block relative w-full h-screen object-cover overflow-hidden">
     </div>
 </section>
-
 <!-- END: MODIFIED HERO SECTION -->
 
 <!-- About Section -->
