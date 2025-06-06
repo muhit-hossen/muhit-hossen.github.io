@@ -3,34 +3,56 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Muhit Hossen Sabbir - Cybersecurity Portfolio</title>
+<!-- FIX: একটিমাত্র Title ট্যাগ রাখা হয়েছে -->
+<title>Muhit Hossen - Cybersecurity Portfolio</title>
+
 <!-- Tailwind CSS CDN -->
 <script src="https://cdn.tailwindcss.com/3.4.1"></script>
 <script>tailwind.config={theme:{extend:{colors:{primary:'#2980b9',secondary:'#3498db'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+
 <!-- External Fonts and Icons -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<!-- FIX: শুধুমাত্র ব্যবহৃত Inter ফন্টটি লোড করা হয়েছে -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
 
 <!-- === CSS ফাইল লিঙ্ক করা হয়েছে === -->
 <link rel="stylesheet" href="styles.css">
+
+  <!-- SEO Tags -->
+  <meta name="description" content="Official portfolio of Muhit Hossen Sabbir, Cybersecurity learner and tech enthusiast. Follow my journey in ethical hacking, web security, and more.">
+  <meta name="keywords" content="Muhit Hossen Sabbir, Cybersecurity, Ethical Hacking, GitHub Portfolio, Cyber Imam">
+  <meta name="author" content="Muhit Hossen">
+
+  <!-- Open Graph for social sharing -->
+  <meta property="og:title" content="Muhit Hossen | Ethical Hacker">
+  <meta property="og:description" content="Explore my portfolio, projects, and blogs on cybersecurity.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://muhit-hossen.github.io/">
+  <meta property="og:image" content="https://muhit-hossen.github.io/assets/og-image.png">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
 </head>
 <body class="bg-gray-900">
+
 <!-- Header/Navigation -->
 <header class="bg-gray-800 shadow-sm sticky top-0 z-50">
     <div class="container mx-auto px-4 py-4 flex justify-between items-center">
         <div class="flex items-center">
-            <div class="text-xl font-semibold text-white">Muhit<span class="text-emerald-400"> Hossen</span></div>
+            <a href="#home" class="text-xl font-semibold text-white">Muhit<span class="text-emerald-400"> Hossen</span></a>
         </div>
-        <nav class="hidden md:flex space-x-8">
+        <!-- FIX: নেভিগেশন এলিমেন্টে একটি আইডি যোগ করা হয়েছে -->
+        <nav id="main-nav" class="hidden md:flex space-x-8">
             <a href="#about" class="nav-link text-gray-300 hover:text-emerald-400 transition-colors">About</a>
             <a href="#skills" class="nav-link text-gray-300 hover:text-emerald-400 transition-colors">Skills</a>
             <a href="#certifications" class="nav-link text-gray-300 hover:text-emerald-400 transition-colors">Certifications</a>
             <a href="#contact" class="nav-link text-gray-300 hover:text-emerald-400 transition-colors">Contact</a>
         </nav>
-        <button class="md:hidden flex items-center justify-center w-10 h-10 text-gray-300">
+        <!-- FIX: মোবাইল মেন্যু বাটনে একটি আইডি যোগ করা হয়েছে -->
+        <button id="menu-toggle" class="md:hidden flex items-center justify-center w-10 h-10 text-gray-300">
             <i class="ri-menu-line ri-lg"></i>
         </button>
     </div>
@@ -41,7 +63,7 @@
     <!-- Left Section (Dark) -->
     <div class="w-3/5 bg-gray-900 text-white flex flex-col justify-center p-8 md:p-24">
         <div class="max-w-xl">
-            <p class="text-lg text-emerald-400 font-medium">Assalamu Alaikum Everyone, I am</p>
+            <p class="text-lg text-emerald-400 font-medium typing">Assalamu Alaikum Everyone, I am</p>
             <h1 class="text-5xl md:text-6xl font-black uppercase my-4 leading-tight">Muhit Hossen<br>Sabbir</h1>
             <p class="text-lg text-gray-300 mb-8">Aspiring Cybersecurity Enthusiast | Ethical Hacking & Penetration Testing | Bug Bounty Explorer</p>
             <a href="#contact" class="inline-block bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-3 px-8 rounded-lg shadow-lg transition-all">
@@ -56,12 +78,12 @@
     </div>
 
     <!-- Overlapping Person Image -->
-    <div class="absolute bottom-0 left-[60%] transform -translate-x-1/2 h-4/5 w-auto">
-        <img src="muhit.png" alt="Portrait of Muhit Hossen Sabbir" class="h-full w-auto object-cover">
+    <div class="absolute bottom-0 left-[60%] transform -translate-x-1/2 h-full w-auto">
+        <img src="muhit.png" alt="Portrait of Muhit Hossen" class="hidden md:block relative w-full h-screen object-cover overflow-hidden">
     </div>
 </section>
-<!-- END: MODIFIED HERO SECTION -->
 
+<!-- END: MODIFIED HERO SECTION -->
 
 <!-- About Section -->
 <section id="about" class="py-16 bg-gray-800">
@@ -79,6 +101,7 @@ With a solid foundation in programming and networking fundamentals, I continuous
 </div>
 </div>
 </section>
+
 <!-- Skills Section -->
 <section id="skills" class="py-16 bg-gray-900">
 <div class="container mx-auto px-4">
@@ -119,6 +142,7 @@ With a solid foundation in programming and networking fundamentals, I continuous
 </div>
 </div>
 </section>
+
 <!-- Certifications Section -->
 <section id="certifications" class="py-16 bg-gray-800">
 <div class="container mx-auto px-4">
@@ -153,6 +177,7 @@ With a solid foundation in programming and networking fundamentals, I continuous
 </div>
 </div>
 </section>
+
 <!-- Contact Section -->
 <section id="contact" class="py-16 bg-gray-900">
 <div class="container mx-auto px-4">
@@ -171,19 +196,20 @@ With a solid foundation in programming and networking fundamentals, I continuous
 </a>
 </div>
 <div class="flex flex-col sm:flex-row justify-center gap-6">
-<a href="https://github.com/muhit-hossen" target="_blank" class="social-icon flex items-center justify-center gap-3 bg-gray-100 hover:bg-gray-200 px-6 py-4 rounded-lg transition-all">
+<!-- FIX: target="_blank" এর সাথে rel="noopener noreferrer" যোগ করা হয়েছে -->
+<a href="https://github.com/muhit-hossen" target="_blank" rel="noopener noreferrer" class="social-icon flex items-center justify-center gap-3 bg-gray-100 hover:bg-gray-200 px-6 py-4 rounded-lg transition-all">
 <div class="w-10 h-10 flex items-center justify-center">
 <i class="ri-github-fill ri-lg text-gray-800"></i>
 </div>
 <span class="font-medium text-gray-800">GitHub</span>
 </a>
-<a href="https://linkedin.com/in/muhit-hossen-sabbir" class="social-icon flex items-center justify-center gap-3 bg-gray-100 hover:bg-gray-200 px-6 py-4 rounded-lg transition-all">
+<a href="https://linkedin.com/in/muhit-hossen-sabbir" target="_blank" rel="noopener noreferrer" class="social-icon flex items-center justify-center gap-3 bg-gray-100 hover:bg-gray-200 px-6 py-4 rounded-lg transition-all">
 <div class="w-10 h-10 flex items-center justify-center">
 <i class="ri-linkedin-box-fill ri-lg text-blue-700"></i>
 </div>
 <span class="font-medium text-gray-800">LinkedIn</span>
 </a>
-<a href="https://t.me/Muhit_Hossain" target="_blank" class="social-icon flex items-center justify-center gap-3 bg-gray-100 hover:bg-gray-200 px-6 py-4 rounded-lg transition-all">
+<a href="https://t.me/Muhit_Hossain" target="_blank" rel="noopener noreferrer" class="social-icon flex items-center justify-center gap-3 bg-gray-100 hover:bg-gray-200 px-6 py-4 rounded-lg transition-all">
 <div class="w-10 h-10 flex items-center justify-center">
 <i class="ri-telegram-fill ri-lg text-blue-400"></i>
 </div>
@@ -197,7 +223,8 @@ With a solid foundation in programming and networking fundamentals, I continuous
 <!-- Footer -->
 <footer class="bg-gray-800 text-white py-8">
 <div class="container mx-auto px-4 text-center">
-<p class="mb-4">© 2025 Muhit Hossen Sabbir. All rights reserved.</p>
+<!-- FIX: কপিরাইট সাল বর্তমান সাল করা হয়েছে -->
+<p class="mb-4">© 2024 Muhit Hossen Sabbir. All rights reserved.</p>
 <p class="text-gray-400 text-sm">Cybersecurity enthusiast passionate about ethical hacking and digital security.</p>
 </div>
 </footer>
