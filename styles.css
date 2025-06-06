@@ -1,6 +1,7 @@
 body {
     font-family: 'Inter', sans-serif;
-    scroll-behavior: smooth;
+    /* FIX: JS এর সাথে কনফ্লিক্ট এড়াতে এটি সরানো হয়েছে */
+    /* scroll-behavior: smooth; */
 }
 .skill-tag:hover {
     transform: translateY(-2px);
@@ -28,4 +29,66 @@ body {
 }
 .nav-link:hover::after {
     width: 100%;
+}
+
+/* --- টাইপিং অ্যানিমেশন --- */
+.typing {
+  width: 25ch; /* লেখার দৈর্ঘ্য অনুযায়ী চ্যান সংখ্যা ঠিক করুন */
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid #34d399; /* টাইপিং কার্সর */
+  font-family: 'Inter', sans-serif;
+  font-size: 1.2rem;
+  animation: typing 2s steps(32) forwards, blinkCaret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 25ch;
+  }
+}
+
+@keyframes blinkCaret {
+  0%, 100% {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #34d399;
+  }
+}
+
+/* --- মোবাইল মেন্যুর জন্য নতুন স্টাইল --- */
+/* ADD: মোবাইল মেন্যু যখন খোলা থাকবে, তখন এই স্টাইলগুলো প্রয়োগ হবে */
+@media (max-width: 767px) {
+    #main-nav.mobile-menu-open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 68px; /* হেডার এর উচ্চতা অনুযায়ী অ্যাডজাস্ট করুন */
+        right: 1rem;
+        background-color: white;
+        border-radius: 8px;
+        padding: 1rem;
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        gap: 0.5rem; /* লিঙ্কগুলোর মধ্যে স্পেস */
+    }
+
+    /* FIX: সাদা ব্যাকগ্রাউন্ডের উপর যেন লিঙ্কগুলো দেখা যায় */
+    #main-nav.mobile-menu-open .nav-link {
+        color: #333; /* গাঢ় রঙ */
+        padding: 8px 12px;
+        border-radius: 4px;
+    }
+
+    #main-nav.mobile-menu-open .nav-link:hover {
+        background-color: #f3f4f6; /* হালকা ধূসর ব্যাকগ্রাউন্ড */
+        color: #2980b9; /* প্রাইমারি রঙ */
+    }
+    
+    #main-nav.mobile-menu-open .nav-link::after {
+        background-color: #2980b9; /* হোভারে আন্ডারলাইন রঙ */
+    }
 }
