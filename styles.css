@@ -42,7 +42,7 @@ body {
   font-family: 'Inter', sans-serif;
   font-size: 1.2rem;
   /* পরিবর্তন: অ্যানিমেশনের ধাপও লেখার দৈর্ঘ্যের সাথে মিলিয়ে দিন */
-  animation: typing 2s steps(32) forwards, blinkCaret 0.75s step-end infinite;
+  animation: typing 4s steps(32) forwards, blinkCaret 0.75s step-end infinite;
 }
 
 @keyframes typing {
