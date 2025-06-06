@@ -1,19 +1,22 @@
-# muhithossen.github.io
-# 👋 Hi, I'm Sabbir Hossen
-🎓 Cybersecurity Enthusiast | Bug Bounty Hunter | Aspiring SOC Analyst
+# 🔐 Muhit Hossen - Cybersecurity Portfolio
 
-## 🔍 About Me
-Passionate about ethical hacking and digital defense. Currently learning web app security, OSINT, and network exploitation.
+This is my personal cybersecurity portfolio built with Tailwind CSS. It showcases my skills, certifications, and contact information.
 
-## 🛠️ Projects
-- 🔐 ARP Spoofing Detection Tool
-- 🛡️ XSS Vulnerability Scanner
-- 📂 Memory Hacking Writeups
+## 🛠️ Built With
+- HTML5
+- Tailwind CSS
+- JavaScript
 
-## 📜 Certifications
-- [ ] TryHackMe Pre-Security
-- [ ] CEH (in progress)
-- [ ] OSINT Fundamentals
+## 📂 Sections
+- Hero (Introduction)
+- About Me
+- Technical Skills
+- Certifications
+- Contact
 
-## 🌐 Portfolio
+## 🌐 Live Demo
 https://sabbirhossen.github.io
+
+## 📧 Contact
+Email: muhit.hossen63@gmail.com  
+Telegram: [@Muhit_Hossain](https://t.me/Muhit_Hossain)
