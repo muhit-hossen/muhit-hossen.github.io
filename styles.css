@@ -1,6 +1,5 @@
 body {
     font-family: 'Inter', sans-serif;
-    /* FIX: JS এর সাথে কনফ্লিক্ট এড়াতে এটি সরানো হয়েছে */
     /* scroll-behavior: smooth; */
 }
 .skill-tag:hover {
@@ -31,17 +30,25 @@ body {
     width: 100%;
 }
 
-/* --- টাইপিং অ্যানিমেশন --- */
+.fade-in {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Typing Animation --- */
 
 .typing {
-  /* পরিবর্তন: লেখার দৈর্ঘ্য অনুযায়ী 25ch কে 32ch করা হয়েছে */
   width: 26ch; 
   white-space: nowrap;
   overflow: hidden;
-  border-right: 3px solid #34d399; /* টাইপিং কার্সর */
+  border-right: 3px solid #34d399; /* Typing Cursor */
   font-family: 'Inter', sans-serif;
   font-size: 1.2rem;
-  /* পরিবর্তন: অ্যানিমেশনের ধাপও লেখার দৈর্ঘ্যের সাথে মিলিয়ে দিন */
   animation: typing 4s steps(32) forwards, blinkCaret 0.75s step-end infinite;
 }
 
@@ -50,7 +57,6 @@ body {
     width: 0;
   }
   to {
-    /* পরিবর্তন: এটিও 32ch হবে */
     width: 26ch;
   }
 }
@@ -64,35 +70,77 @@ body {
   }
 }
 
-/* --- মোবাইল মেন্যুর জন্য নতুন স্টাইল --- */
-/* ADD: মোবাইল মেন্যু যখন খোলা থাকবে, তখন এই স্টাইলগুলো প্রয়োগ হবে */
+/* --- Menu Style for Mobile --- */
 @media (max-width: 767px) {
     #main-nav.mobile-menu-open {
         display: flex;
         flex-direction: column;
         position: absolute;
-        top: 68px; /* হেডার এর উচ্চতা অনুযায়ী অ্যাডজাস্ট করুন */
+        top: 68px;
         right: 1rem;
         background-color: white;
         border-radius: 8px;
         padding: 1rem;
         box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-        gap: 0.5rem; /* লিঙ্কগুলোর মধ্যে স্পেস */
+        gap: 0.5rem; /* Link Space */
     }
 
-    /* FIX: সাদা ব্যাকগ্রাউন্ডের উপর যেন লিঙ্কগুলো দেখা যায় */
     #main-nav.mobile-menu-open .nav-link {
-        color: #333; /* গাঢ় রঙ */
+        color: #333;
         padding: 8px 12px;
         border-radius: 4px;
     }
 
     #main-nav.mobile-menu-open .nav-link:hover {
-        background-color: #f3f4f6; /* হালকা ধূসর ব্যাকগ্রাউন্ড */
-        color: #2980b9; /* প্রাইমারি রঙ */
+        background-color: #f3f4f6;
+        color: #2980b9;
     }
     
     #main-nav.mobile-menu-open .nav-link::after {
-        background-color: #2980b9; /* হোভারে আন্ডারলাইন রঙ */
+        background-color: #2980b9;
     }
+}
+/* --- Automatic & Infinite Button Shining Effect --- */
+
+.shine-effect {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.shine-effect::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-25deg);
+  
+  /* এখানে আমরা অ্যানিমেশনটি যোগ করছি।
+    নাম: shine-loop
+    সময়: 4s (প্রতি ৪ সেকেন্ডে একবার শাইন করবে)
+    লুপ: infinite (অসীম সময় ধরে চলবে)
+  */
+  animation: shine-loop 4s infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes shine-loop {
+  0% {
+    left: -150%; /* অ্যানিমেশন শুরুতে বাটনের বাইরে বাম দিকে থাকবে */
+  }
+  50% {
+    left: 150%; /* অ্যানিমেশনের মাঝামাঝি সময়ে ডানে চলে যাবে */
+  }
+  100% {
+    left: 100%; /* বাকি সময়টুকু বাইরেই থাকবে, এরপর আবার শুরু হবে */
+  }
 }
