@@ -1,18 +1,18 @@
 // একটি DOMContentLoaded এর মধ্যে সমস্ত কোড রাখা হয়েছে
-document.addEventListener('DOMContentLoaded', function() {
-    
+document.addEventListener('DOMContentLoaded', function () {
+
     // --- মোবাইল নেভিগেশন মেন্যু লজিক ---
     const menuButton = document.getElementById('menu-toggle');
     const navMenu = document.getElementById('main-nav');
 
     if (menuButton && navMenu) {
-        menuButton.addEventListener('click', function(e) {
+        menuButton.addEventListener('click', function (e) {
             e.stopPropagation(); // বাটন ক্লিকে ডকুমেন্ট ক্লিক যেন ট্রিগার না হয়
             navMenu.classList.toggle('mobile-menu-open');
         });
 
         // মেন্যুর বাইরে ক্লিক করলে মেন্যু বন্ধ হয়ে যাবে
-        document.addEventListener('click', function(e) {
+        document.addEventListener('click', function (e) {
             if (!navMenu.contains(e.target) && navMenu.classList.contains('mobile-menu-open')) {
                 navMenu.classList.remove('mobile-menu-open');
             }
@@ -21,14 +21,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // --- স্মুথ স্ক্রলিং লজিক ---
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
+        anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const targetId = this.getAttribute('href');
             const targetElement = document.querySelector(targetId);
 
             if (targetElement) {
                 // স্টিকি হেডারের জন্য অফসেট (হেডারের উচ্চতা প্রায় 70-80px)
-                const headerOffset = 80; 
+                const headerOffset = 80;
                 const elementPosition = targetElement.getBoundingClientRect().top;
                 const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
@@ -46,13 +46,34 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // --- রিসাইজ হ্যান্ডলিং ---
-    // যখন স্ক্রিন বড় হবে, তখন মোবাইল মেন্যুর ক্লাস स्वतः সরে যাবে 
-    window.addEventListener('resize', function() {
+    // যখন স্ক্রিন বড় হবে, তখন মোবাইল মেন্যুর ক্লাস स्वतঃ সরে যাবে 
+    window.addEventListener('resize', function () {
         if (window.innerWidth >= 768) {
             if (navMenu && navMenu.classList.contains('mobile-menu-open')) {
                 navMenu.classList.remove('mobile-menu-open');
             }
         }
     });
+
+// --- fade-in animation trigger when section comes into view ---
+const faders = document.querySelectorAll('.fade-in');
+
+const options = {
+    threshold: 0.5
+};
+
+const appearOnScroll = new IntersectionObserver(function (entries) {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        } else {
+            entry.target.classList.remove('visible'); // আবার scroll এলে animate হবে
+        }
+    });
+}, options);
+
+faders.forEach(fadeEl => {
+    appearOnScroll.observe(fadeEl);
+});
 
 });
