@@ -56,24 +56,27 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 // --- fade-in animation trigger when section comes into view ---
-const faders = document.querySelectorAll('.fade-in');
+const fadeInElements = document.querySelectorAll('.fade-in');
 
-const options = {
-    threshold: 0.5
-};
+    if (fadeInElements.length > 0) {
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1 
+        };
 
-const appearOnScroll = new IntersectionObserver(function (entries) {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-        } else {
-            entry.target.classList.remove('visible'); // আবার scroll এলে animate হবে
-        }
-    });
-}, options);
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
 
-faders.forEach(fadeEl => {
-    appearOnScroll.observe(fadeEl);
-});
+        fadeInElements.forEach(el => {
+            observer.observe(el);
+        });
+    }
 
 });
